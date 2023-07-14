@@ -1,7 +1,7 @@
 
 # SEANEMA (SEA Cinema Movie Ticket Booking App)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
+![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=flat&logo=daisyui&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 
 
 A movie ticket booking app that allows users to effortlessly browse through a collection of movies, select showtimes, choose seats, and secure reservations in seconds. The app also features a user balance functionality for cashless transactions.
@@ -54,4 +54,27 @@ The app will be accessible at `http://127.0.0.1:8000/`
 - Authentication and authorization: Users can register, login, and logout. Only logged-in users can perform certain actions and access personalized features.
 - Cancel ticket transactions: Logged-in users can cancel their own ticket transactions and receive refunds.
 
+## Screenshot
+## index
+<img src="media/index.png">
 
+### movie detail
+<img src="media/Movie-Detail.png">
+
+### book ticket
+<img src="media/book-ticket.png">
+
+### transaction history
+<img src="media/history.png">
+
+### login
+<img src="media/Login.png">
+
+### register
+<img src="media/Registration.png">
+
+### top up modal
+<img src="media/topup.png">
+
+### withdraw modal
+<img src="media/withdraw.png">

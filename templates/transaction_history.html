@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Movie Detail
+{% endblock title %}
+
+{% block content %}
+    <div class="px-8 h-screen">
+        <h2 class="text-2xl font-bold mb-4 py-4">Transaction History</h2>
+        <div class="bg-neutral rounded-box p-4">
+
+          <table id="transaction-table" class="stripe hover" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>Movie</th>
+                      <th>Seat Numbers</th>
+                      <th>Total Cost</th>
+                      <th>Date</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for transaction in transactions %}
+                      <tr>
+                          <td>{{ transaction.movie_title }}</td>
+                          <td>{{ transaction.seat_numbers }}</td>
+                          <td>{{ transaction.total_cost }}</td>
+                          <td>{{ transaction.transaction_date }}</td>
+                          <td class="text-center">
+                            <form method="POST" action="{% url 'cancel_ticket' transaction_id=transaction.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-error text-red-600 hover:bg-red-600 hover:text-white hover:outline-none">Cancel</button>
+                            </form>
+                        </td>
+                        
+                        
+                      </tr>
+                  {% empty %}
+                      <tr>
+                          <td colspan="5">No transactions found.</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#transaction-table').DataTable();
+        });
+    </script>
+{% endblock content %}

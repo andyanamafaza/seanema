@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Movie Detail
+{% endblock title %}
+
+{% block content %}
+
+<div class="hero min-h-screen">
+  <div class="hero-content px-4 py-8 mx-auto max-w-7xl flex flex-col lg:flex-row">
+    <img src="{{ movie.poster_url }}" class="max-w-sm rounded-lg shadow-2xl mb-8 lg:mb-0" alt="Movie Poster" />
+    <div class="lg:ml-8">
+      <h1 class="text-3xl lg:text-5xl font-bold mb-4">{{ movie.title }}</h1>
+      <p class="py-1">{{ movie.description }}</p>
+      <p class="py-1">Age Rating: {{ movie.age_rating }}</p>
+      <p class="py-1">Ticket Price: {{ movie.ticket_price }}</p>
+      <p class="py-1">Release Date: {{ movie.release_date }}</p>
+      {% if user.is_authenticated %}
+      <a href="{% url 'book_ticket' movie.title %}">
+        <button class="btn btn-primary mt-4">Book Ticket</button>
+      </a>
+      {% else %}
+      <a href="{% url 'user_login' %}">
+        <button class="btn btn-primary mt-4">Login to Book Ticket</button>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
